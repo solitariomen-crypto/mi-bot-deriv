@@ -220,8 +220,7 @@ async function connectBot() {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-                'Deriv-App-ID': '67545'
+                'Content-Type': 'application/json'
             }
         });
         
@@ -265,8 +264,7 @@ async function connectBot() {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-                'Deriv-App-ID': '67545'
+                'Content-Type': 'application/json'
             }
         });
         
@@ -288,7 +286,11 @@ async function connectBot() {
         // Try different possible URL fields
         let wsUrl = otpData.ws_url || otpData.otp_url || otpData.url;
         if (!wsUrl && otpData.otp) {
-            wsUrl = `wss://api.derivws.com/trading/v1/options/ws/${config.accountType}?otp=${otpData.otp}`;
+            wsUrl = `wss://api.derivws.com/trading/v1/options/ws/${config.accountType}?otp=${otpData.otp}&app_id=67545`;
+        } else if (wsUrl && !wsUrl.includes('app_id=')) {
+            // Add app_id if not present
+            const separator = wsUrl.includes('?') ? '&' : '?';
+            wsUrl += `${separator}app_id=67545`;
         }
         if (!wsUrl) {
             throw new Error('No se encontró URL WebSocket en respuesta: ' + JSON.stringify(otpData));
