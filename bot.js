@@ -220,7 +220,8 @@ async function connectBot() {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Deriv-App-ID': '67545'
             }
         });
         
@@ -264,7 +265,8 @@ async function connectBot() {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Deriv-App-ID': '67545'
             }
         });
         
