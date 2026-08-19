@@ -1,0 +1,28 @@
+{
+  "apiToken": "",
+  "accountType": "demo",
+  "stakeAmount": 1,
+  "takeProfit": 2,
+  "growthRate": 2,
+  "totalTarget": 20,
+  "symbol": "R_10",
+  "contractType": "ACCU",
+  "appId": "67545",
+  "apiBaseUrl": "https://api.derivws.com",
+  "wsEndpoints": {
+    "demo": "wss://api.derivws.com/trading/v1/options/ws/demo",
+    "real": "wss://api.derivws.com/trading/v1/options/ws/real",
+    "public": "wss://api.derivws.com/trading/v1/options/ws/public"
+  },
+  "description": "Configuración del Bot Deriv Acumulador - Volatilidad 10",
+  "version": "1.0.0",
+  "parameters": {
+    "stakeAmount": "Capital por operación en USD (default: 1)",
+    "takeProfit": "Ganancia objetivo por operación en USD para cerrar automáticamente (default: 2)",
+    "growthRate": "Tasa de crecimiento del acumulador en porcentaje (1-5%, default: 2%)",
+    "totalTarget": "Meta total de ganancias en USD para detener el bot (default: 20)",
+    "symbol": "Símbolo del mercado: R_10 = Volatilidad 10 (1s)",
+    "contractType": "Tipo de contrato: ACCU = Acumulador",
+    "accountType": "demo para pruebas, real para dinero real"
+  }
+}
